@@ -12,8 +12,8 @@
   --bg-primary: #f8f9fa;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
-  --glass: rgba(255, 255, 255, 0.8);
-  --border: rgba(0, 0, 0, 0.05);
+  --glass: rgba(255, 255, 255, 0.7);
+  --border: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -25,15 +25,14 @@ body {
     color 0.5s ease;
 }
 
-/* Glass Card */
 .glass-card {
   background: var(--glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Shimmer Animation */
 .shimmer-text {
   background: linear-gradient(90deg, #8b5cf6, #ec4899, #8b5cf6);
   background-size: 200% auto;
@@ -49,7 +48,6 @@ body {
   }
 }
 
-/* Blob Animation */
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -78,18 +76,17 @@ body {
   display: none !important;
 }
 
-/* Movie Card Hover */
 .movie-card-hover {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .movie-card-hover:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px -10px var(--accent-glow);
 }
 
-/* Animations */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -99,4 +96,17 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+#movie-modal .glass-card::-webkit-scrollbar {
+  width: 6px;
+}
+#movie-modal .glass-card::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+.show-scroll {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
